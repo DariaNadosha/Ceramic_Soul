@@ -1,0 +1,206 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: $light;
+        -webkit-box-shadow: 0 0 0px 40rem $dark inset;
+    }
+    background-color: $dark;
+    padding: 50px 0;
+    .just-validate-error-field {
+        border-bottom: 1px solid $ui-error;
+        outline: transparent;
+        &::placeholder {
+            color: $ui-error;
+        }
+    }
+    &_spaced {
+        margin-top: 60px;
+    }
+    &__header {
+        color: $light;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    &__text {
+        color: $light;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: normal;
+        &_spaced {
+            margin-top: 40px;
+        }
+    }
+    &__form {
+        margin-top: 40px;
+    }
+    &__input {
+        display: block;
+        width: 293px;
+        padding-bottom: 15px;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid $ui-active;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $ui-active;
+        &::placeholder {
+            color: $ui-active;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__check-block {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        color: $light;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        a {
+            color: #a22dc6;
+            text-decoration: none;
+            margin-left: 3px;
+        }
+        .just-validate-error-field {
+            border: 1px solid $light;
+            outline: transparent;
+        }
+    }
+    &__checkbox {
+        position: relative;
+        appearance: none;
+        border: 1px solid $light;
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:checked {
+            background-color: $light;
+            border-color: $dark;
+            &::after {
+                content: "✔";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: $dark;
+                font-size: 12px;
+            }
+        }
+    }
+    &__form-btn {
+        margin-top: 20px;
+    }
+    &__links {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 66px;
+        row-gap: 40px;
+    }
+    &__nav {
+        margin-top: 40px;
+        ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+    }
+    &__link {
+        a {
+            color: $light;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: none;
+        }
+    }
+    &__social {
+        margin-top: 40px;
+        &-block {
+            display: flex;
+            margin-top: 40px;
+            list-style-type: none;
+            padding: 0;
+            column-gap: 10px;
+            a {
+                display: block;
+                color: $light;
+                text-decoration: none;
+                font-size: 24px;
+            }
+            span:before {
+                margin: 0;
+            }
+        }
+    }
+    &__copyright {
+        margin-top: 40px;
+        text-align: center;
+        color: $light;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__newsletter {
+            width: 100%;
+        }
+        &__copyright {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer {
+        &__newsletter {
+            width: auto;
+        }
+        &__social,
+        &__links {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .footer {
+        padding-top: 80px;
+        &_spaced {
+            margin-top: 100px;
+        }
+        &__copyright {
+            margin-top: 18px;
+        }
+    }
+}
